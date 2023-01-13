@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require("cors")
 require('./db/mongoose')
 const medecinRouter = require('./routers/medecin')
 const secretaireRouter = require('./routers/secretaire')
@@ -7,7 +8,7 @@ const fichePatientRouter = require('./routers/fichePatient')
 const app = express()
 const port = 4000
 
-
+app.use(cors())
 app.use(express.json())
 app.use(medecinRouter)
 app.use(secretaireRouter)
